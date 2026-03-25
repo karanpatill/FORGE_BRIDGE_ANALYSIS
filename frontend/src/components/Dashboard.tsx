@@ -1,6 +1,5 @@
-```
 import React from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Activity, 
   ShieldCheck, 
@@ -55,16 +54,16 @@ const containerVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.1, delayChildren: 0.2 }
   }
-};
+} as const;
 
-const itemVariants: Variants = {
+const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: { 
     y: 0, 
     opacity: 1,
     transition: { type: 'spring', damping: 25, stiffness: 100 }
   }
-};
+} as const;
 
 const Dashboard: React.FC<DashboardProps> = ({ data }) => {
   const { vision, time, internal, risk, suggestions } = data;
